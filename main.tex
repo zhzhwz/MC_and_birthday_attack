@@ -22,7 +22,7 @@
     \frametitle{计算圆周率}
 
     \begin{problem}
-        假设有一台普通的计算机可以使用，如何计算圆周率的数值？       
+        如何计算圆周率的具体数值？       
     \end{problem}
 
     \pause
@@ -38,10 +38,10 @@
     \frametitle{计算圆周率}
 
     \begin{problem}
-        假设有一台普通的计算机可以使用，如何计算圆周率的数值？       
+        如何计算圆周率的具体数值？       
     \end{problem}
 
-    \begin{block}{Chudnovsky 算法}
+    \begin{block}{楚德诺夫斯基（Chudnovsky）算法}
         $$S = \sum_{n = 0}^{\infty} (-1)^n \frac{(6n)!(k_2+nk_1)}{(n!)^3(3n)!(8k_4k_5)^n}$$
         $$\pi = \frac{k_6\sqrt{k_3}}{S}$$
         其中
@@ -62,6 +62,8 @@
     \begin{columns}
         \column{.38\textwidth}
 
+        \pause
+
         $$p = \frac{S_{\text{圆}}}{S_{\text{正方形}}} = \frac{\pi}{4}$$
     
         $$\pi = 4p$$
@@ -76,17 +78,79 @@
 
 \end{frame}
 
-\section{计算定积分}
+\begin{frame}
+    \frametitle{布丰投针}
+
+    \begin{problem}
+        设我们有一个以平行且等距木纹铺成的地板（如图），现在随意抛一支长度比木纹之间距离小的针，求针和其中一条木纹相交的概率。
+    \end{problem}
+
+    \begin{columns}
+        \column{.48\textwidth}
+
+        设针的长度为 $l$，平行线间距为 $t$，$x$ 为针的中心和最近的平行线的距离，$\theta$ 为针和线之间的锐角。
+
+        $x \in [0, t/2]$ 且均匀分布；
+
+        $\theta \in [0, \pi/2]$ 且均匀分布。
+
+        \column{.48\textwidth}
+   
+        \begin{figure}
+            \centering
+            \includegraphics[width=.95\textwidth]{res/buffon.png}
+        \end{figure} 
+    \end{columns}
+
+\end{frame}
 
 \section{蒙特卡罗方法}
 
-\subsection{光线追踪}
+\begin{frame}
+    \frametitle{蒙特卡罗方法}
+
+    \begin{definition}
+        通过多次随机试验，用试验得到的频率来近似计算概率。
+    \end{definition}
+
+    \begin{block}{分类}
+        \begin{itemize}
+            \item 所求解问题可以转化为某种随机分布的特征数。
+            \begin{itemize}
+                \item 利用投点法中点在圆内的概率求 $\pi$
+                \item 利用布丰投针的概率求 $\pi$
+            \end{itemize}
+            \item 所求解的问题本身具有内在的随机性。
+            \begin{itemize}
+                \item 分析中子在反应堆中的传输过程
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{应用}
 
 \begin{frame}
-    \frametitle{}
+    \frametitle{蒙特卡罗方法的应用}
 
+    \begin{columns}
+        \column{.48\textwidth}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=.98\textwidth]{res/integral.png}
+            \caption{计算定积分}
+        \end{figure}
+
+        \column{.48\textwidth}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=.98\textwidth]{res/path_tracing_sampling.png}
+            \caption{计算机图形学：路径追踪}
+        \end{figure}
+    \end{columns}
     
-
 \end{frame}
 
 \end{document}
